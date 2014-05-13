@@ -11,13 +11,9 @@ class CircularBuffer
   end
 
   def write(element)
-    if element == nil
-      return 0
-    elsif @buffer.length >= @limit
-      raise BufferFullException
-    else
-      @buffer << element
-    end
+    raise BufferNilException if element == nil
+    raise BufferFullException if @buffer.length >= @limit
+    @buffer << element
   end
 
   def write!(element)
@@ -28,6 +24,9 @@ class CircularBuffer
   def clear
     @buffer.clear 
   end
+end
+
+class BufferNilException < Exception
 end
 
 class BufferEmptyException < Exception
