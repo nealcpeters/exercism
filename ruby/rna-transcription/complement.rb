@@ -32,5 +32,4 @@ class Complement
     end
     dna_complement.join("")
   end
-
 end
