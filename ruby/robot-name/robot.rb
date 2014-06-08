@@ -13,7 +13,7 @@ class Robot
   def name_generator
     name = []
     name << [*"A".."Z"].sample(2)
-    name << [*1..10].sample(3).join
+    name << [*1..10].sample(3)
     name.join
   end
 end
