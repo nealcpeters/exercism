@@ -1,11 +1,16 @@
 class Robot
-  attr_reader :name
 
-  def initialize
-    @name = "#{("A".."Z").to_a.sample(2).join}" + "#{(1..10).to_a.sample(3).join}"
+  def name
+    @name ||= name_generator
   end
 
   def reset
-    @name = "#{("A".."Z").to_a.sample(2).join}" + "#{(1..10).to_a.sample(3).join}"
+    @name = name_generator
+  end
+
+  private
+
+  def name_generator
+    name = [*"A".."Z"].sample(2).join + [*1..10].sample(3).join
   end
 end
