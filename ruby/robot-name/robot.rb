@@ -11,6 +11,9 @@ class Robot
   private
 
   def name_generator
-    name = [*"A".."Z"].sample(2).join + [*1..10].sample(3).join
+    name = []
+    name << [*"A".."Z"].sample(2)
+    name << [*1..10].sample(3).join
+    name.join
   end
 end
